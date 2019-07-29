@@ -1,0 +1,31 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: nginx-pv-claim
+spec:
+  # storageClassName: azurefile
+  storageClassName: azurefilepremium
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Gi
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+    containers:
+      - name: nginx-pod
+        image: nginx
+        ports:
+          - containerPort: 80
+            name: "http-server"
+        volumeMounts:
+          - name: nginx-pv
+            mountPath: /data
+    volumes:
+      - name: nginx-pv
+        persistentVolumeClaim:
+          claimName: nginx-pv-claim
