@@ -2,4 +2,4 @@ az account set --subscription "SUB_NAME"
 az ad sp show --id SPN_ID --query "displayName" -o tsv
 
 az aks show -g au3 -n au3 --query "aadProfile"
-az aks get-credentials --resource-group au3 --name au3 --overwrite-existing
+az aks get-credentials --resource-group RG_NAME --name CLUSTER_NAME --overwrite-existing

@@ -3,8 +3,8 @@ apiVersion: v1
 metadata:
   name: nginx-pv-claim
 spec:
-  # storageClassName: azurefile
-  storageClassName: azurefilepremium
+  storageClassName: azurefile
+  #  storageClassName: azurefilepremium
   accessModes:
     - ReadWriteOnce
   resources:

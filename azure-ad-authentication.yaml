@@ -9,4 +9,4 @@ roleRef:
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: User
-  name: da29ce5a-eafb-4177-b6d3-4727485a232f
+  name: UPN_or_ObjectId
